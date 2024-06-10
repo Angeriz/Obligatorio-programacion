@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=ç, initial-scale=1.0">
+    <script src="Javascrpit/datosPrueba.js"></script>
+    <script src="Javascrpit/clases.js"></script>
+    <script src="Javascrpit/funciones.js"></script>
     <title>Document</title>
     <link rel="stylesheet" href="CSS/estilos.css">
 
@@ -19,6 +22,15 @@
             </ul>
         </nav>
     </header>
+    <div id="mostrarSN">
+        <h2>Desea cargar datos?</h2>
+        <form id="formBotonesSiNo">
+            <button type="button" onclick="siCargarDatos()">Si</button>
+            <button type="button" onclick="noCargarDatos()">No</button>
+        </form>
+    </div>
+    
+    </div>
     <div id="desGeneral">
         <h1 id="tituloDG">DESCRIPCIÓN GENERAL</h1>
         <h2>¿Qué encontrarás en este sitio?</h2>
@@ -31,7 +43,7 @@
 
         <p class="autores"></p>
     </div>
-    <div id="gestionTemas">
+    <div id="gestionTemas" style="display: none;">
         <h1 id="tituloGT">GESTIÓN DE TEMAS</h1>
         <h2>Alta de temas</h2>
         <form>
@@ -52,7 +64,7 @@
             <li>Sin datos</li>
         </ul>
     </div>
-    <div id="gestionPreguntas">
+    <div id="gestionPreguntas" style="display: none;">
         <h1 id="tituloGP">GESTIÓN DE PREGUNTAS</h1>
         <h2>Alta de preguntas</h2>
         <form>
@@ -90,7 +102,7 @@
             </tr>
         </table>
     </div>
-    <div id="jugar">
+    <div id="jugar" style="display: none;">
         <h1 id="tituloJ">¡A JUGAR!</h1>
         <h2>Configuración</h2>
         <form>
