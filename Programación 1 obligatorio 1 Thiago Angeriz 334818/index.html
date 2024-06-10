@@ -1,0 +1,119 @@
+<!-- Thiago Angeriz 334818 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=ç, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/estilos.css">
+
+</head>
+<body>
+    <header id="header">
+        <img src="img/Trivia.jpg" width=300 height=90 alt="Si lees esto es porque algo hice mal en el obligatorio :(">
+        <nav>
+            <ul class="lista">
+                <li class="listaNav"><a href="#desGeneral">Información General</a></li>
+                <li class="listaNav"><a href="#gestionTemas">Administrar</a></li>
+                <li class="listaNav"><a href="#jugar">¡Jugar!</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="desGeneral">
+        <h1 id="tituloDG">DESCRIPCIÓN GENERAL</h1>
+        <h2>¿Qué encontrarás en este sitio?</h2>
+        <p>En este sitio podrás crear temas, preguntas y jugar a nuestra versión del conocido juego de Trivia.</p>
+        <p>Es una prueba de conocimientos generales con preguntas y respuestas.</p>
+        <p>Cada tema tiene un nombre y una descripsión. Cada pregunta es de un tema, tiene un nivel (1-muy fácil, ..., 5-muy difícil), un texto que la describe y te aparecerán varias respuestas, pero una sola es la correcta.<br>Si la respondes bien, sumas 10 puntos, por cada error pierdes un punto, ¡pero puede usar la ayuda!.</p>
+        <p>El sitio fue desarrollado en el 1er. semestre 2024 - Programación 1 - Universidad ORT Uruguay por:</p>
+
+        <img src="img/Persona.jpg" width=70 height=70 alt="Si ves esto es porque erré en la imagen :(" class="imgTh"> Thiago Angeriz 334818 
+
+        <p class="autores"></p>
+    </div>
+    <div id="gestionTemas">
+        <h1 id="tituloGT">GESTIÓN DE TEMAS</h1>
+        <h2>Alta de temas</h2>
+        <form>
+            <label>Nombre</label>
+            <input id="nombreADT" type="text">
+            <label>Descripción</label>
+            <input id="descripcionADT" type="text">
+            <button>Agregar</button>
+        </form>
+        <h2>Datos generales de temas</h2>
+        <p>Lista de temas(total de temas:0)</p>
+        <ul>
+            <li>Sin datos</li>
+        </ul>
+        <p>Promedio de preguntas por tema (cantidad total de preguntas/cantidad total de temas): sin datos</p>
+        <p>Temas sin preguntas:</p>
+        <ul id="listaVacia">
+            <li>Sin datos</li>
+        </ul>
+    </div>
+    <div id="gestionPreguntas">
+        <h1 id="tituloGP">GESTIÓN DE PREGUNTAS</h1>
+        <h2>Alta de preguntas</h2>
+        <form>
+            <label>Tema</label>
+            <select id="temaADP"></select>
+            <label>Nivel</label>
+            <input id="nivelADP" type="number">
+        </form>
+        <form>
+            <label>Texto de la pregunta</label>
+            <input id="textoDeLaPreguntaADP" type="text">
+            <label>Respuesta Correcta</label>
+            <input id="respuestaCorrectaADP" type="text">
+            <label>Respuestas Incorrectas</label>
+            <input id="respuestasIncorrectasADP" type="text">
+            <button>Agregar</button>
+        </form>
+        <h2>Datos generales de preguntas</h2>
+        <p>Total de preguntas registradas: 0 preguntas</p>
+        <p>Máximo puntaje obtenido por un jugador: sin datos</p>
+        <form>
+            <label>Preguntas registradas:</label>
+            <input type="radio">
+            <label>Orden nombre tema creciente/nivel creciente</label>
+            <input type="radio">
+            <label>Orden nombre tema decreciente/nivel creciente</label>
+        </form>  
+        <table>
+            <tr>
+                <th>Nombre del tema</th>
+                <th>Nivel</th>
+                <th>Texto de la pregunta</th>
+                <th>Respuesta correcta</th>
+                <th>Respuesta incorrecta</th>
+            </tr>
+        </table>
+    </div>
+    <div id="jugar">
+        <h1 id="tituloJ">¡A JUGAR!</h1>
+        <h2>Configuración</h2>
+        <form>
+            <label>Tema a elegir</label>
+            <select id="selectTemaAElegir"></select>
+            <label>Nivel del juego</label>
+            <input id="numberNDJ" type="number" value="1">
+            <button>Jugar</button>
+        </form>
+        <h2>Juego</h2>
+        <p>Puntaje acumulado en esta partida: 0</p>
+        <p>La pregunta es...:</p>
+        <form>
+            <p id="textoDeLaPregunta">TEXTO DE LA PREGUNTA</p>
+            <button class="respuestas" id="respuesta1">Respuesta 1</button>
+            <button class="respuestas">Respuesta 2</button>
+            <button class="respuestas">Respuesta 3</button>
+        </form>
+        <form>
+            <button id="ayudaBoton">Ayuda</button>
+            <button>Siguiente Pregunta</button>
+            <button>Terminar</button>
+        </form>
+    </div>
+</body>
+</html>

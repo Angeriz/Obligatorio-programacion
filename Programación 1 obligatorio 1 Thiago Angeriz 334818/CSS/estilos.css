@@ -1,0 +1,135 @@
+/* Thiago Anegriz 334818 */
+h1, h2{
+    text-align: center;
+}
+#header{
+    background-color: #F9A370 ;
+    text-align: center;
+}
+.listaNav{
+    display: inline;
+    margin-right: 60px;
+}
+.lista{
+    display: block;
+}
+.imgTh{
+    border-radius: 50%;
+    vertical-align: middle;
+}
+.autores{
+
+}
+table{
+    padding-bottom: 110px;
+    border: solid;
+    border-color: black;
+    border-width: 1px;
+    width: 100%;
+    margin: auto;
+    margin-top: 10px;
+}
+th{
+    border: solid;
+    border-color: black;
+    border-width: 0.5px;
+    background-color: whitesmoke; 
+}
+#desGeneral{
+    background-color: #F6F1DB;
+}
+#gestionTemas,#gestionPreguntas{
+    background-color: #FFD388;
+}
+#listaVacia{
+    margin-bottom: 0;
+}
+#jugar{
+    background-color: #FDDAC6;
+}
+#tituloGP{
+    margin-top: 0;
+    border-color: #F0C47B ;
+}
+#tituloDG{
+    border-color: rgb(222, 222, 201);
+}
+#tituloGT{
+    border-color: #F0C47B ;
+}
+#tituloJ{
+    border-color: rgb(224, 191, 162);
+}
+h1{
+    border: solid;
+    border-width: 0.5px;
+    border-radius: 5px;
+}
+#textoDeLaPregunta{
+    background-color: #E17C24;
+    border: solid;
+    border-color: white;
+    text-align: center;
+    color: white;
+    height: 40px;
+    line-height: 40px;
+    width: 95%;
+    margin-left: 2.5%;
+    border-width: 2px;
+}
+#respuesta1{
+   margin-left: 38.5%;
+}
+.respuestas{
+    background-color: #E17C24;
+    border: solid;
+    border-color: white;
+    text-align: center;
+    color: white;
+    height: 40px;
+    line-height: 30px;
+    width: 130px;
+    margin-left: 20px;
+    border-width: 2px;
+}
+#ayudaBoton{
+    margin-left: 43.7%;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+#selectTemaAElegir{
+    width: 200px;
+    margin-left: 7%;
+}
+#numberNDJ{
+    width: 50px;
+    margin-left: 6%;
+}
+#nombreADT{
+    margin-left: 8.5%;
+    width: 200px;
+}
+#descripcionADT{
+    margin-left: 7%;
+    width: 200px;
+}
+#temaADP{
+    margin-left: 9%;
+    width: 210px;
+}
+#nivelADP{
+    margin-left: 10.5%;
+    width: 50px;
+}
+#textoDeLaPreguntaADP{
+    margin-left: 2.8%;
+    width: 200px;
+}
+#respuestaCorrectaADP{
+    margin-left: 4.8%;
+    width: 200px;
+}
+#respuestasIncorrectasADP{
+    margin-left: 1%;
+    width: 200px;
+}
