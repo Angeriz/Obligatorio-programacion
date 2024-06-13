@@ -20,4 +20,14 @@ class Sistema {
         this.listaTemas = [];
         this.listaPreguntas = [];
     }
+
+    agregarTemas(nombre, descripcion){
+        let tema = new Tema(nombre, descripcion);
+        this.listaTemas.push(tema);
+    }
+
+    agregarPreguntas(tema, nivel, textoPregunta, resCorrecta, resIncorrecta){
+        let pregunta = new Pregunta(tema, nivel, textoPregunta, resCorrecta, resIncorrecta);
+        this.listaPreguntas.push(pregunta);
+    }
 }

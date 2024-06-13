@@ -85,30 +85,30 @@
     <div id="gestionPreguntas" style="display: none;">
         <h1 id="tituloGP">GESTIÓN DE PREGUNTAS</h1>
         <h2>Alta de preguntas</h2>
-        <form>
-            <label>Tema</label>
-            <select id="temaADP"></select>
-            <label>Nivel</label>
-            <input id="nivelADP" type="number">
+        <form id="formularioPreguntas1">
+            <label for="temaADP">Tema</label>
+            <select id="temaADP" required></select>
+            <label for="nivelADP">Nivel</label>
+            <input id="nivelADP" type="number" min="1" max="5" value="1" required>
         </form>
-        <form>
-            <label>Texto de la pregunta</label>
-            <input id="textoDeLaPreguntaADP" type="text">
-            <label>Respuesta Correcta</label>
-            <input id="respuestaCorrectaADP" type="text">
-            <label>Respuestas Incorrectas</label>
-            <input id="respuestasIncorrectasADP" type="text">
-            <button>Agregar</button>
+        <form id="formularioPreguntas2">
+            <label for="textoDeLaPreguntaADP">Texto de la pregunta</label>
+            <input id="textoDeLaPreguntaADP" type="text" required>
+            <label for="respuestaCorrectaADP">Respuesta Correcta</label>
+            <input id="respuestaCorrectaADP" type="text" required>
+            <label for="respuestasIncorrectasADP">Respuestas Incorrectas</label>
+            <input id="respuestasIncorrectasADP" type="text" required>
+            <button type="button" id="botonAgregarADP">Agregar</button>
         </form>
         <h2>Datos generales de preguntas</h2>
         <p>Total de preguntas registradas: 0 preguntas</p>
         <p>Máximo puntaje obtenido por un jugador: sin datos</p>
         <form>
             <label>Preguntas registradas:</label>
-            <input type="radio">
-            <label>Orden nombre tema creciente/nivel creciente</label>
-            <input type="radio">
-            <label>Orden nombre tema decreciente/nivel creciente</label>
+            <input type="radio" id="radio1" name="radioP" checked>
+            <label for="radio1">Orden nombre tema creciente/nivel creciente</label>
+            <input type="radio" id="radio2" name="radioP">
+            <label for="radio2">Orden nombre tema decreciente/nivel creciente</label>
         </form>  
         <table id="tablaPreguntas">
             <tr>
