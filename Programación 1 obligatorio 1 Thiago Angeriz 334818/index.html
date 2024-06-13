@@ -2,34 +2,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="js/datosPrueba.js"></script>
+    <script src="js/clases.js"></script>
+    <script src="js/funciones.js"></script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=ç, initial-scale=1.0">
-    <script src="Javascrpit/datosPrueba.js"></script>
-    <script src="Javascrpit/clases.js"></script>
-    <script src="Javascrpit/funciones.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="CSS/estilos.css">
 
 </head>
+
+
+
+
+
 <body>
+
+    <!--Cabeza de la pagina con los hipervinculos y la imagen del juego-->
     <header id="header">
         <img src="img/Trivia.jpg" width=300 height=90 alt="Si lees esto es porque algo hice mal en el obligatorio :(">
         <nav>
             <ul class="lista">
-                <li class="listaNav"><a href="#desGeneral">Información General</a></li>
-                <li class="listaNav"><a href="#gestionTemas">Administrar</a></li>
-                <li class="listaNav"><a href="#jugar">¡Jugar!</a></li>
+                <li id="vinculoInformacionGeneral" class="listaNav" onclick="mostrarInformacionGeneral()"><a href="#desGeneral">Información General</a></li>
+                <li id="vinculoaAdministrar" class="listaNav" onclick="mostrarAdministrar()"><a href="#gestionTemas">Administrar</a></li>
+                <li id="vinculoJugar" class="listaNav" onclick="mostrarJugar()"><a href="#jugar">¡Jugar!</a></li>
             </ul>
         </nav>
     </header>
-    <div id="mostrarSN">
-        <h2>Desea cargar datos?</h2>
-        <form id="formBotonesSiNo">
-            <button type="button" onclick="siCargarDatos()">Si</button>
-            <button type="button" onclick="noCargarDatos()">No</button>
-        </form>
-    </div>
-    
+
+
+    <!--Alert para cargar datos-->
+
+
+
+
+
+    <!--Parrafo de descripcion general-->
     </div>
     <div id="desGeneral">
         <h1 id="tituloDG">DESCRIPCIÓN GENERAL</h1>
@@ -43,27 +51,37 @@
 
         <p class="autores"></p>
     </div>
+
+
+
+
+    <!--Parrafo de gestion de temas -->
     <div id="gestionTemas" style="display: none;">
         <h1 id="tituloGT">GESTIÓN DE TEMAS</h1>
         <h2>Alta de temas</h2>
-        <form>
-            <label>Nombre</label>
-            <input id="nombreADT" type="text">
-            <label>Descripción</label>
-            <input id="descripcionADT" type="text">
-            <button>Agregar</button>
+        <form id="formularioTemas">
+            <label for="nombreADT">Nombre</label>
+            <input id="nombreADT" type="text" required>
+            <label for="descripcionADT">Descripción</label>
+            <input id="descripcionADT" type="text" required>
+            <button type="button" id="botonAgregarADT">Agregar</button>
         </form>
         <h2>Datos generales de temas</h2>
         <p>Lista de temas(total de temas:0)</p>
-        <ul>
+        <ul id="listaDTemas">
             <li>Sin datos</li>
         </ul>
-        <p>Promedio de preguntas por tema (cantidad total de preguntas/cantidad total de temas): sin datos</p>
+        <p id="preguntaPorTema">Promedio de preguntas por tema (cantidad total de preguntas/cantidad total de temas): sin datos</p>
         <p>Temas sin preguntas:</p>
         <ul id="listaVacia">
             <li>Sin datos</li>
         </ul>
     </div>
+
+
+
+
+    <!--Parrafo de gestion de preguntas-->
     <div id="gestionPreguntas" style="display: none;">
         <h1 id="tituloGP">GESTIÓN DE PREGUNTAS</h1>
         <h2>Alta de preguntas</h2>
@@ -92,7 +110,7 @@
             <input type="radio">
             <label>Orden nombre tema decreciente/nivel creciente</label>
         </form>  
-        <table>
+        <table id="tablaPreguntas">
             <tr>
                 <th>Nombre del tema</th>
                 <th>Nivel</th>
@@ -102,6 +120,11 @@
             </tr>
         </table>
     </div>
+
+
+
+
+    <!--Parrafo de jugar-->
     <div id="jugar" style="display: none;">
         <h1 id="tituloJ">¡A JUGAR!</h1>
         <h2>Configuración</h2>
