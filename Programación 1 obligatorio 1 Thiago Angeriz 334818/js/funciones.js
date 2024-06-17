@@ -53,6 +53,7 @@ function agregarTema() {
     actualizarPromedioPreguntasTema();
     actualizarTemasSinPreguntas();
     agregarTemaAPregunta();
+    actualizarNumeroListaDeTemas();
     alert("Se agregó el tema correctamente");
     form.reset();    
 }
@@ -70,29 +71,36 @@ function actualizarListaTemas() {
 
 function actualizarPromedioPreguntasTema() {
     let preguntasTema = document.getElementById("preguntaPorTema");
-    preguntasTema.innerHTML = "<p id='preguntaPorTema'>Promedio de preguntas por tema (cantidad total de preguntas/cantidad total de temas): " +  ((sistema.listaPreguntas.length) / (sistema.listaTemas.length)) + " </p>";
+    preguntasTema.textContent = "Promedio de preguntas por tema (cantidad total de preguntas/cantidad total de temas): " +  ((sistema.listaPreguntas.length) / (sistema.listaTemas.length)).toFixed(2);
 }
 
 function actualizarTemasSinPreguntas() {
-
+    let cantidadTemasSinPreguntas = document.getElementById("cantidadTemasSinPreguntas");
+    let contadorTemasSinPreguntas = 0;
+    for (let i = 0; i < sistema.listaTemas.length; i++){
+        let temaSinPregunta = true;
+        let comparacionTemas = sistema.listaTemas[i].nombre;
+        for (let j = 0; j < sistema.listaPreguntas.length; j++){
+            let comparacionPreguntas = sistema.listaPreguntas[j].tema;
+            if (comparacionTemas === comparacionPreguntas){
+               temaSinPregunta = false;
+           }
+         }
+    if (temaSinPregunta === true){
+            contadorTemasSinPreguntas++;
+        }
+    }
+  cantidadTemasSinPreguntas.textContent = contadorTemasSinPreguntas;
 }
-/*ATENCION TENGO QUE HACER ESTA FUNCION DESPUES DE HACER QUE FUNCIONEN LAS PREGUNTAS*/
+
+function actualizarNumeroListaDeTemas() {
+    let cantidadListaDeTemas = document.getElementById("numeroListaDeTemas");
+    cantidadListaDeTemas.textContent = "Lista de temas(total de temas: " + sistema.listaTemas.length + ")"
+}
 
 
 
-
-/*Funciones para gregar preguntas y que se actualice la lista*/
-function agregarTemaAPregunta(){
-    let seleccionar = document.getElementById("temaADP");
-for (i = 0; i < sistema.listaTemas.length; i++) {
-    let tema = sistema.listaTemas[i];
-    let opcion = document.createElement("option");
-    opcion.text = tema.nombre;
-    opcion.value = i
-    seleccionar.appendChild(opcion);
-}}
-
-
+/*Funciones para agregar preguntas y que se actualice la lista*/
 document.addEventListener("DOMContentLoaded", function() {
     iniciarAgregarPregunta();
 });
@@ -102,10 +110,8 @@ function iniciarAgregarPregunta() {
     document.getElementById("botonAgregarADP").addEventListener("click", agregarPregunta);
 }
 
-
-
 function agregarPregunta(){
-let tema = document.getElementById("temaADP").textContent;
+let tema = document.getElementById("temaADP").value;
 let nivel = document.getElementById("nivelADP").value;
 let textoPregunta = document.getElementById("textoDeLaPreguntaADP").value;
 let resCorrecta = document.getElementById("respuestaCorrectaADP").value;
@@ -143,8 +149,20 @@ for (i = 0; i < arrayResIncorrectas.length; i++){
 
 sistema.agregarPreguntas(tema, nivel, textoPregunta, resCorrecta, resIncorrecta);
 actualizarPromedioPreguntasTema();
+actualizarTemasSinPreguntas();
 alert ("Se añadió la pregunta correctamente");
 formP1.reset();
 formP2.reset();
+}
+
+function agregarTemaAPregunta(){
+    let seleccionar = document.getElementById("temaADP");
+    seleccionar.innerHTML = "";
+for (i = 0; i < sistema.listaTemas.length; i++) {
+    let tema = sistema.listaTemas[i];
+    let opcion = document.createElement("option");
+    opcion.text = tema.nombre;
+    seleccionar.appendChild(opcion);
+    }
 }
 
