@@ -36,6 +36,7 @@ const sistema = new Sistema();
 function agregarTema() {
     let nombre = document.getElementById("nombreADT").value;
     let descripcion = document.getElementById("descripcionADT").value;
+    let color = crearColorTema();
     let form = document.getElementById("formularioTemas");
     if(!form.checkValidity()){
         alert("Se debe ingresar un nombre y una descripcion del tema");
@@ -48,7 +49,7 @@ function agregarTema() {
             return;
         }
     }
-    sistema.agregarTemas(nombre, descripcion);
+    sistema.agregarTemas(nombre, descripcion, color);
     actualizarListaTemas();
     actualizarPromedioPreguntasTema();
     actualizarTemasSinPreguntas();
@@ -96,6 +97,12 @@ function actualizarTemasSinPreguntas() {
 function actualizarNumeroListaDeTemas() {
     let cantidadListaDeTemas = document.getElementById("numeroListaDeTemas");
     cantidadListaDeTemas.textContent = "Lista de temas(total de temas: " + sistema.listaTemas.length + ")"
+}
+
+function crearColorTema(){
+    let colorRandom = Math.floor(Math.random() * 0xFFFFFF);
+    let hexString = colorRandom.toString(16);
+    return "#" + hexString.padStart(6, "0");
 }
 
 
@@ -150,6 +157,8 @@ for (i = 0; i < arrayResIncorrectas.length; i++){
 sistema.agregarPreguntas(tema, nivel, textoPregunta, resCorrecta, resIncorrecta);
 actualizarPromedioPreguntasTema();
 actualizarTemasSinPreguntas();
+actualizarPreguntasRegistradas();
+actualizarTablaPreguntas();
 alert ("Se añadió la pregunta correctamente");
 formP1.reset();
 formP2.reset();
@@ -166,3 +175,55 @@ for (i = 0; i < sistema.listaTemas.length; i++) {
     }
 }
 
+function actualizarPreguntasRegistradas() {
+    let preguntasRegistradas = document.getElementById("preguntasRegistradas");
+    preguntasRegistradas.textContent = "Total de preguntas registradas: " + sistema.listaPreguntas.length + " preguntas";
+}
+
+function maxPuntajeObtenido(){
+
+}
+/* HACER ESTA FUNCION CUANDO HAGA EL JUEGO */
+
+function actualizarTablaPreguntas() {
+    let bodyTablaPreguntas = document.getElementById("bodyTablaPreguntas");
+    bodyTablaPreguntas.innerHTML = "<tbody id='bodyTablaPreguntas'>" +
+    "</tbody>";
+    for (i = 0; i < sistema.listaPreguntas.length; i++) {
+        let nuevaFila = document.createElement("tr");
+        let preguntaFila = sistema.listaPreguntas[i];
+
+        for (j = 0; j < sistema.listaTemas.length; j++){
+            if (sistema.listaTemas[j].nombre === preguntaFila.tema){
+                colorTema = sistema.listaTemas[j].color;
+            }
+        }
+
+        let celdaTema = document.createElement("td");
+        celdaTema.textContent = preguntaFila.tema;
+        celdaTema.style.backgroundColor = colorTema;
+        nuevaFila.appendChild(celdaTema);
+
+        let celdaNivel = document.createElement("td");
+        celdaNivel.textContent = preguntaFila.nivel;
+        celdaNivel.style.backgroundColor = colorTema;
+        nuevaFila.appendChild(celdaNivel);
+
+        let celdaTextoPregunta = document.createElement("td");
+        celdaTextoPregunta.textContent = preguntaFila.textoPregunta;
+        celdaTextoPregunta.style.backgroundColor = colorTema;
+        nuevaFila.appendChild(celdaTextoPregunta);
+
+        let celdaResCorrecta = document.createElement("td");
+        celdaResCorrecta.textContent = preguntaFila.resCorrecta;
+        celdaResCorrecta.style.backgroundColor = colorTema;
+        nuevaFila.appendChild(celdaResCorrecta);
+
+        let celdaResIncorrecta = document.createElement("td");
+        celdaResIncorrecta.textContent = preguntaFila.resIncorrecta;
+        celdaResIncorrecta.style.backgroundColor = colorTema;
+        nuevaFila.appendChild(celdaResIncorrecta);
+
+        bodyTablaPreguntas.appendChild(nuevaFila);
+    }
+}

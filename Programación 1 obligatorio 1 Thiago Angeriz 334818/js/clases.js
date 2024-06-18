@@ -1,7 +1,8 @@
 class Tema {
-    constructor (nombre, descripcion) {
+    constructor (nombre, descripcion, color) {
      this.nombre = nombre;
      this.descripcion = descripcion;
+     this.color = color;
     }
 }
 
@@ -21,8 +22,8 @@ class Sistema {
         this.listaPreguntas = [];
     }
 
-    agregarTemas(nombre, descripcion){
-        let tema = new Tema(nombre, descripcion);
+    agregarTemas(nombre, descripcion, color){
+        let tema = new Tema(nombre, descripcion, color);
         this.listaTemas.push(tema);
     }
 

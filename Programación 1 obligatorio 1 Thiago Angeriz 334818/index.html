@@ -101,7 +101,7 @@
             <button type="button" id="botonAgregarADP">Agregar</button>
         </form>
         <h2>Datos generales de preguntas</h2>
-        <p>Total de preguntas registradas: 0 preguntas</p>
+        <p id="preguntasRegistradas">Total de preguntas registradas: 0 preguntas</p>
         <p>Máximo puntaje obtenido por un jugador: sin datos</p>
         <form>
             <label>Preguntas registradas:</label>
@@ -111,13 +111,17 @@
             <label for="radio2">Orden nombre tema decreciente/nivel creciente</label>
         </form>  
         <table id="tablaPreguntas">
-            <tr>
-                <th>Nombre del tema</th>
-                <th>Nivel</th>
-                <th>Texto de la pregunta</th>
-                <th>Respuesta correcta</th>
-                <th>Respuesta incorrecta</th>
-            </tr>
+            <thead>
+                <tr>
+                    <th>Nombre del tema</th>
+                    <th>Nivel</th>
+                    <th>Texto de la pregunta</th>
+                    <th>Respuesta correcta</th>
+                    <th>Respuesta incorrecta</th>
+                </tr>
+            </thead>
+            <tbody id="bodyTablaPreguntas">
+            </tbody>
         </table>
     </div>
 
