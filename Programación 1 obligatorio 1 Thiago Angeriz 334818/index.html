@@ -1,4 +1,5 @@
 <!-- Thiago Angeriz 334818 -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +18,6 @@
 
 
 <body>
-
     <!--Cabeza de la pagina con los hipervinculos y la imagen del juego-->
     <header id="header">
         <img src="img/Trivia.jpg" width=300 height=90 alt="Si lees esto es porque algo hice mal en el obligatorio :(">
@@ -38,7 +38,6 @@
 
 
     <!--Parrafo de descripcion general-->
-    </div>
     <div id="desGeneral">
         <h1 id="tituloDG">DESCRIPCIÓN GENERAL</h1>
         <h2>¿Qué encontrarás en este sitio?</h2>
@@ -87,7 +86,9 @@
         <h2>Alta de preguntas</h2>
         <form id="formularioPreguntas1">
             <label for="temaADP">Tema</label>
-            <select id="temaADP" required></select>
+            <select id="temaADP" required>
+                <option value="" disabled selected>Selecciona una opción</option>
+            </select>
             <label for="nivelADP">Nivel</label>
             <input id="nivelADP" type="number" min="1" max="5" value="1" required>
         </form>
@@ -102,7 +103,7 @@
         </form>
         <h2>Datos generales de preguntas</h2>
         <p id="preguntasRegistradas">Total de preguntas registradas: 0 preguntas</p>
-        <p>Máximo puntaje obtenido por un jugador: sin datos</p>
+        <p id="maximoPuntaje">Máximo puntaje obtenido por un jugador: sin datos</p>
         <form>
             <label>Preguntas registradas:</label>
             <input type="radio" id="radio1" name="radioP" checked>
@@ -129,29 +130,31 @@
 
 
     <!--Parrafo de jugar-->
-    <div id="jugar" style="display: none;">
+    <div id="jugarConfiguracion" style="display: none;">
         <h1 id="tituloJ">¡A JUGAR!</h1>
         <h2>Configuración</h2>
         <form>
-            <label>Tema a elegir</label>
-            <select id="selectTemaAElegir"></select>
-            <label>Nivel del juego</label>
-            <input id="numberNDJ" type="number" value="1">
-            <button>Jugar</button>
+            <label for="temaJuego">Tema a elegir</label>
+            <select id="temaJuego"></select>
+            <label for="nivelJuego">Nivel del juego</label>
+            <input id="nivelJuego" type="number" value="1" min="1" max="5">
+            <button id="botonJugar">Jugar</button>
         </form>
+    </div>
+    <div id="jugarJuego" style="display: none;">
         <h2>Juego</h2>
-        <p>Puntaje acumulado en esta partida: 0</p>
+        <p id="puntajePartida">Puntaje acumulado en esta partida: 0</p>
         <p>La pregunta es...:</p>
-        <form>
+        <form id="formPreguntasRespuestas">
             <p id="textoDeLaPregunta">TEXTO DE LA PREGUNTA</p>
             <button class="respuestas" id="respuesta1">Respuesta 1</button>
-            <button class="respuestas">Respuesta 2</button>
-            <button class="respuestas">Respuesta 3</button>
+            <button class="respuestas" id="respuesta2">Respuesta 2</button>
+            <button class="respuestas" id="respuesta3">Respuesta 3</button>
         </form>
         <form>
             <button id="ayudaBoton">Ayuda</button>
-            <button>Siguiente Pregunta</button>
-            <button>Terminar</button>
+            <button id="siguientePregunta">Siguiente Pregunta</button>
+            <button id="terminarBoton">Terminar</button>
         </form>
     </div>
 </body>

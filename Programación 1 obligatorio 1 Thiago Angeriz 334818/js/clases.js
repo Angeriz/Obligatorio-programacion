@@ -1,3 +1,5 @@
+/* Thiago Anegriz 334818 */
+
 class Tema {
     constructor (nombre, descripcion, color) {
      this.nombre = nombre;
@@ -32,3 +34,4 @@ class Sistema {
         this.listaPreguntas.push(pregunta);
     }
 }
+

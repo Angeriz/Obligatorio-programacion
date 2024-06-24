@@ -1,4 +1,5 @@
 /* Thiago Anegriz 334818 */
+
 h1, h2{
     text-align: center;
 }
@@ -26,6 +27,7 @@ table{
     padding-bottom: 110px;
     border: solid;
     border-color: black;
+    border-collapse: collapse;
     border-width: 1px;
     width: 100%;
     margin: auto;
@@ -36,7 +38,8 @@ th{
     border: solid;
     border-color: black;
     border-width: 0.5px;
-    background-color: whitesmoke; 
+    background-color: whitesmoke;
+    width: 100vh;
 }
 
 td{
@@ -64,9 +67,14 @@ td{
     margin-bottom: 0;
 }
 
-#jugar{
+#jugarConfiguracion{
     background-color: #FDDAC6;
 }
+
+#jugarJuego{
+    background-color: #FDDAC6;
+}
+
 #ti
 tuloGP{
     margin-top: 0;
@@ -104,6 +112,10 @@ h1{
     border-width: 2px;
 }
 
+#formPreguntasRespuestas{
+    text-align: center;
+}
+
 #respuesta1{
    margin-left: 38.5%;
 }
@@ -127,12 +139,12 @@ h1{
     margin-bottom: 20px;
 }
 
-#selectTemaAElegir{
+#temaJuego{
     width: 200px;
     margin-left: 7%;
 }
 
-#numberNDJ{
+#nivelJuego{
     width: 50px;
     margin-left: 6%;
 }
